@@ -1,0 +1,32 @@
+﻿@model fyp_One.Models.UserLogInVM
+
+@using (Html.BeginForm("LogIn", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="field-wrap">
+        <label>
+            Email Address<span class="req">*</span>
+        </label>
+        @Html.EditorFor(model => model.LogInEmail)
+        @Html.ValidationMessageFor(model => model.LogInEmail, "", new { @class = "text-danger" })
+
+
+    </div>
+
+    <div class="field-wrap">
+        <label>
+            Password<span class="req">*</span>
+        </label>
+        @Html.EditorFor(model => model.LogInPassword)  
+        @Html.ValidationMessageFor(model => model.LogInPassword, "", new { @class = "text-danger" })
+
+
+      </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
+    <input type="submit" class="button button-block" value="Login">
+   
+
+}
