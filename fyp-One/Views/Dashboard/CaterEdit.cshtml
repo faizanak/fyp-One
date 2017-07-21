@@ -12,19 +12,52 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Cater</h4>
+        <h4> </h4>
         <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.cateraddress.Cater_Id)
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.cateraddress.Id)
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.cater.Id)
 
         <div class="form-group">
             @Html.LabelFor(model => model.cater.CaterServiceName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cater.CaterServiceName, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.cater.CaterServiceName, new { htmlAttributes = new { @class = "form-control col-md-2" } })
                 @Html.ValidationMessageFor(model => model.cater.CaterServiceName, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.cateraddress.cStreetAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.cateraddress.cStreetAddress, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                @Html.ValidationMessageFor(model => model.cateraddress.cStreetAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.cateraddress.cCity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.cateraddress.cCity, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                @Html.ValidationMessageFor(model => model.cateraddress.cCity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.cateraddress.cCountry, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.cateraddress.cCountry, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                @Html.ValidationMessageFor(model => model.cateraddress.cCountry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.cateraddress.cContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.cateraddress.cContactNumber, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                @Html.ValidationMessageFor(model => model.cateraddress.cContactNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -34,5 +67,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+ @*   @Html.ActionLink("Back to List", "Index")*@
 </div>

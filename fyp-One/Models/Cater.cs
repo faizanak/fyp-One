@@ -11,7 +11,8 @@ namespace fyp_One.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Cater
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,9 @@ namespace fyp_One.Models
         }
     
         public int Id { get; set; }
+
+        [Display(Name = "Cater Service")]
+        [Required(ErrorMessage = "Please Enter Cater Service")]
         public string CaterServiceName { get; set; }
         public int User_Id { get; set; }
         public Nullable<int> Verify { get; set; }

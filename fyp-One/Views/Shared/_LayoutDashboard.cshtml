@@ -13,6 +13,9 @@
     <link href="~/Content/dashboard/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    @*<script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
 </head>
 <body>
     <div id="wrapper">
@@ -32,7 +35,7 @@
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
+                @*<li class="dropdown">
                     <!--     Katao   -->
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -222,7 +225,7 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-alerts -->
-                </li>
+                </li>*@
                 <!-- /.dropdown                          Keep Ougout                           Kaam Ke Chez -->
                @{
                    if (Session["User"] != null)

@@ -5,7 +5,7 @@
 
 <div class="jumbotron jumboCater-bg">
     <div class="container" style="background-color:rgba(220,220,220, 0.5); border-radius:0.4px; padding:1.4em; margin-top:110px; color:#333333;">
-        <h1 style="text-align:center; "><strong>Caterers</strong></h1>
+        <h1 style="text-align:center; "><strong>Caters</strong></h1>
         <p style="color: #333333; text-align:justify">
             Looking for a <b>Best caterer</b>? EventPlanatizer offers the gold standard for <b>caterers</b> with links, 
             catering menus and detailed info about <b>top catering businesses</b>.
@@ -20,37 +20,37 @@
    
 @foreach (var item in Model)
 {
-      
+    <div class="feature-full-1col">
 
-        <div class="feature-full-1col">
-
-            <div class="image" width:20%;">
-                <img src="~/Content/images/no-img.png"  style="width:85%"/>
-                @*<div class="descrip text-center">
+        <div class="image" style="background-image: url('@("../../Uploads/cater-" + item.Id + "/1.PNG")');">
+            @*<img src="~/Content/images/no-img.png" style="width:85%" />*@
+            @*<div class="descrip text-center">
                     <p><small>For as low as</small><span id="display-price">Rs @item.venuePrice</span></p>
                 </div>*@
-            </div>
-            <div class="desc">
-                <h3 id="display-name"><b>@item.CaterServiceName</b> <span class="glyphicon glyphicon-ok-sign" style="color:#FF5722;" title="Verified "></span></h3>
-                <div>
-                    <p id="display-addr"><strong>Address</strong> &nbsp;@item.CaterAddres.ElementAt(0).cStreetAddress, 
-                    @item.CaterAddres.ElementAt(0).cCity</p>
-                </div>
-
-                <div>
-                    <p style="color: #FF5722"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span> 95 Reviews</p> 
-                    @*<p id="display-cap"><strong>Capacity</strong> &nbsp;@item.Menus.ElementAt(0).Mtype</p>*@
-                </div>
-                <p>
-                    <a href="/CaterManage/menu?id=@(item.Id)" class="btn btn-primary btn-luxe-primary">
-                        See Details
-                        <i class="ti-angle-right"></i>
-                    </a>
-                </p>
-</div>
-
-
         </div>
+        <div class="desc">
+            <h3 id="display-name"><b>@item.CaterServiceName</b> <span class="glyphicon glyphicon-ok-sign" style="color:#FF5722;" title="Verified "></span></h3>
+            <div>
+                <p id="display-addr">
+                    <strong>Address</strong> &nbsp;@item.CaterAddres.ElementAt(0).cStreetAddress,
+                    @item.CaterAddres.ElementAt(0).cCity
+                </p>
+            </div>
+
+            <div>
+              @*  <p style="color: #FF5722"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span> 95 Reviews</p>*@
+                @*<p id="display-cap"><strong>Capacity</strong> &nbsp;@item.Menus.ElementAt(0).Mtype</p>*@
+            </div>
+            <p>
+                <a href="/CaterManage/menu?id=@(item.Id)" class="btn btn-primary btn-luxe-primary">
+                    See Details
+                    <i class="ti-angle-right"></i>
+                </a>
+            </p>
+        </div>
+
+
+    </div>
 }
 
 </div>
